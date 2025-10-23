@@ -14,6 +14,9 @@ pipeline {
         }
         
         stage('Run Ansible Playbook') {
+	    environment {
+            ANSIBLE_HOST_KEY_CHECKING = 'False'
+            }
             steps {
                 script {
                     /* * 'jenkins-ssh-key' = ID Kunci SSH kita
